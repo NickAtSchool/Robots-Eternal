@@ -37,7 +37,7 @@ public abstract class PolygonAgentController : MonoBehaviour {
 			} else if (targetDistance < 0.25 * targetDistanceThreshold && Time.time % 0.1f < 0.02f) {
 				wanderX -= 0.05f * wanderRadius * Mathf.Sign(transform.InverseTransformPoint(targetGameObject.transform.position).x);
 			}
-			Wander(0.7f, 0.5f);
+			//Wander(0.7f, 0.5f);
 			//Move(true, false, !agent.rightHanded, agent.rightHanded);//offhand faces outside
 		}
 	}
