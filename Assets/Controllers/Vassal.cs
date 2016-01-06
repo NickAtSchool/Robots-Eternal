@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Vassal : PolygonAgentController {
 
 	public GameObject lordGameObject;
-
-	// Use this for initialization
-	protected override void Start () {
+    // Use this for initialization
+    protected override void Start () {
 		base.Start();
 	}
 	
@@ -15,7 +13,9 @@ public class Vassal : PolygonAgentController {
 		if (agent.defunct) {
 			return;
 		}
-		if (lordGameObject) {
+        Rotate(GameObject.FindObjectOfType<PolygonHero>().transform.position);
+        agent.abilityList[0].Activate(agent.transform, agent);
+        if (lordGameObject) {
 			Follow(lordGameObject, 3);
 		}
 	}
